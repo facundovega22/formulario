@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+}
+p{
+    color: rgb(165, 42, 42);
+}
+/*nombre*/
+.nombre{margin-bottom: 10px;
+    margin-left: 90px;}
+/*correo*/
+.correo{
+    margin-bottom: 10px;
+    margin-left: 240px ;
+}
+/*contraseña*/
+.contraseña1{
+margin-top: 20px;
+margin-left: 70px;
+
+}
+.contraseña2{ 
+margin-top: 10px;
+margin-left: 250px ;
+}
+/*terminosycondiciones*/
+.tyc{
+    margin-left: 6.6%;
+    margin-top:-30px;
+    margin-bottom: 5px;
+}
+.labeltyc{
+margin-right:15px;
+}
+.inputtyc{
+    margin-top: 15px;
+}
+.boton{
+    margin-left: 45%;
+}

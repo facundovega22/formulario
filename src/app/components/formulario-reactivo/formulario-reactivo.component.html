@@ -1,0 +1,43 @@
+<h1>formulario reactivo</h1>
+
+<form [formGroup]="formularioUsuario" (ngSubmit)="agregarUsuario()" >
+    <div class="row">
+        <div class="nombre col">
+            <label for="">nombre:</label>
+            <input type="text" formControlName="nombre">
+            <p *ngIf="formularioUsuario.get ('nombre')?.touched && formularioUsuario.get ('nombre')?.errors?.['required']">el campo nombre es requerido</p>
+        </div>
+    
+        <div class="correo col">
+            <label for="">correo:</label>
+            <input type="text" formControlName="correo">
+            <p *ngIf="formularioUsuario.get ('correo')?.touched && formularioUsuario.get ('correo')?.errors?.['required']">el campo email es requerido</p>
+            <p *ngIf="formularioUsuario.get ('correo')?.touched && formularioUsuario.get ('correo')?.errors?.['pattern']">el campo email esta incompleto</p>
+        </div>
+    <section class="row">
+
+        <div class="contraseña1 col">
+            <label for="">contraseña:</label>
+            <input type="password" formControlName="contraseña">
+            <p *ngIf="formularioUsuario.get ('contraseña')?.touched && formularioUsuario.get ('contraseña')?.errors?.['required']">el campo contraseña es requerido</p>
+            <p *ngIf="formularioUsuario.get('contraseña')?.touched && formularioUsuario.get ('contraseña')?.errors?.['minlength']">la contraseña debe tener un minimo de 5 diguitos</p>
+        </div>
+        <div class="contraseña2 col">
+            <label for="">Confirmar contraseña:</label>
+            <input type="password" formControlName="contraseña2">
+            <p *ngIf="formularioUsuario.get ('contraseña')?.touched && formularioUsuario.get ('contraseña')?.errors?.['required']">el campo contraseña es requerido</p>
+            <p *ngIf="formularioUsuario.get('contraseña')?.touched && formularioUsuario.get ('contraseña')?.errors?.['minlength']">la contraseña debe tener un minimo de 5 diguitos</p>
+            <p  *ngIf="!contrasenasIguales">las contraseñas deben ser iguales</p>
+        </div>
+    
+    </section>
+    
+        <div class="tyc">
+            <label class="labeltyc" for="">aceptar terminos y condiciones</label>
+            <input class="inputtyc" type="checkbox" formControlName="admin">
+            <p *ngIf="formularioUsuario.get ('admin')?.touched && formularioUsuario.get ('admin')?.errors?.['required']">campo requerido</p>
+        </div>
+    </div>
+
+    <button class="boton" type="submit" [disabled]="formularioUsuario.invalid">agregar usuario</button>
+</form>
